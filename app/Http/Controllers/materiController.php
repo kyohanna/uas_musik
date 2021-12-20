@@ -71,7 +71,11 @@ class materiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $materi=materi::findOrFail($id);
+        return view("editmateri",[
+            'title'=>'Edit Materi',
+            'materi'=>$materi
+        ]);
     }
 
     /**
@@ -86,10 +90,10 @@ class materiController extends Controller
         $materi=materi::findOrFail($id);
         $materi->update([
             'kategori'=>$request->kategori,
-            'materi'=>$request->materi,
+            'materi'=>$request->materi
             //'image'=>$request->image
         ]);
-        return redirect(route('mobil.index'));
+        return redirect(route('materi.index'));
     }
 
     /**

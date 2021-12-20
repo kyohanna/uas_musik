@@ -14,10 +14,9 @@ class CreateMaterisTable extends Migration
     public function up()
     {
         Schema::create('materis', function (Blueprint $table) {
-            $table->string('materi_id');
+            $table->string('materi_id')->primary();
             $table->string('kategori');
             $table->text('materi');
-            $table->primary('materi_id');
             $table->timestamps();
         });
     }
