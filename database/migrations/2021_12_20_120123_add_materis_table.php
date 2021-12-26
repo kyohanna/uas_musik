@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMaterisTable extends Migration
+class AddMaterisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateMaterisTable extends Migration
      */
     public function up()
     {
-        Schema::create('materis', function (Blueprint $table) {
-            $table->increments('materi_id');
-            $table->string('kategori');
-            $table->text('materi');
-            $table->timestamps();
+        Schema::table('materis', function (Blueprint $table) {
+            
+            $table->string('materi_image');
         });
     }
 

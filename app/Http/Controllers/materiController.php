@@ -41,11 +41,33 @@ class materiController extends Controller
      */
     public function store(Request $request)
     {
-        materi::create([
-            'kategori'=>$request->kategori,
-            'materi'=>$request->materi
-            //'image'=>$request->image
-        ]);
+
+
+
+        // materi::create([
+        //     'kategori'=>$request->kategori,
+        //     'materi'=>$request->materi,
+        //     'materi_image'=>$materi->getClie
+        //     // 'materi_image'=>$request->materi_image
+        // ]);
+
+        $materi=new materi();
+        $materi->kategori = $request->input('kategori');
+        $materi->materi = $request->input('materi');
+        if($request->hasFile('materi_image'))
+            {
+                $file = $request->file('materi_image');
+                $extention = $file->getClientOriginalExtension();
+                $filename = time(). '.' .$extention;
+                $file->move('uploads/materis/', $filename);
+                $materi->materi_image = $filename;
+            }
+
+        // $size = $request->file('materi_image')->getSize();
+        // $name = $request->file('materi_image')->getClientOriginalName();
+        // $request->file('materi_image')->store('uploads/materis/');
+        // $materi->materi_image->$name;
+        $materi->save();
         return redirect(route('materi.index'));
     }
 

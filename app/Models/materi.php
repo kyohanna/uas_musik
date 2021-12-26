@@ -10,5 +10,6 @@ class materi extends Model
     use HasFactory;
     protected $primaryKey='materi_id';
     protected $keyType='string';
-    protected $fillable=['kategori','materi'];
+    protected $table ='materis';
+    protected $fillable=['kategori','materi','materi_image'];
 }

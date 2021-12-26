@@ -10,6 +10,7 @@
         <th>No </th>
         <th>Kategori</th>
         <th>Materi</th>
+        <th>gambar</th>
         <th>Action</th>
     </tr>
 
@@ -21,6 +22,9 @@
         <td>{{ $i }}</td>
         <td>{{ $mat['kategori'] }}</td>
         <td>{{ $mat['materi'] }}</td>
+        <td>
+            <img src="{{ asset('uploads/materis/'.$mat->materi_image) }}" width="70px" height="70px" alt="image">
+        </td>
         <td>
         <div class="d-grid d-md-flex justify-content-left">
             <a href="{{ route('materi.show', $mat->materi_id) }}"><button type="button" class="btn btn-info me-md-2">Show</button></a>

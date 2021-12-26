@@ -14,12 +14,13 @@ class CreateSoalsTable extends Migration
     public function up()
     {
         Schema::create('soals', function (Blueprint $table) {
-            $table->id('soal_id');
+            $table->increments('soal_id');
             $table->string('soal');
-            $table->unsignedBigInteger('materi_id');
-            $table->foreign('materi_id')->references('id')->on('materis');
-            $table->primary('soal_id');
+            $table->string('materi_id');
+            // $table->foreign('materi_id')->references('id')->on('materis');
+            // $table->primary('soal_id');
             $table->timestamps();
+
         });
     }
 
