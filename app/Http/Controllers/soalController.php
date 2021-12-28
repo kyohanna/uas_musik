@@ -37,7 +37,15 @@ class soalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //codingan di menit 18:38 video ke 2
+        $so=new Soal();
+        $so->value=$request->input('soal'); //sumpah sorry aku gtw iki betul ta ga
+
+        if($so->save()){
+            $quiz=Soal::all();
+            return view('home');
+        }
+
     }
 
     /**

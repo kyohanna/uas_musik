@@ -14,12 +14,24 @@ class CreateSoalsTable extends Migration
     public function up()
     {
         Schema::create('soals', function (Blueprint $table) {
-            $table->increments('soal_id');
-            $table->string('soal');
-            $table->string('materi_id');
-            // $table->foreign('materi_id')->references('id')->on('materis');
-            // $table->primary('soal_id');
-            $table->timestamps();
+          /**
+           * Punya Dafa
+            *$table->increments('soal_id');
+            *$table->string('soal');
+            *$table->string('materi_id');
+            *$table->foreign('materi_id')->references('id')->on('materis');
+            *$table->primary('soal_id');
+            *$table->timestamps();
+            */
+
+            //Codingan ini ada di menit 2:10 video ke-2
+            //klo sesuai video
+            $table->id();
+            $table->text('value');
+             $table->unsignedBigInteger('materi_id');
+             $table->foreign('materi_id')->references('id')->on('materis');
+             $table->timestamps();
+            
 
         });
     }

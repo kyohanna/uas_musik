@@ -41,10 +41,7 @@ class materiController extends Controller
      */
     public function store(Request $request)
     {
-
-
-
-        // materi::create([
+                // materi::create([
         //     'kategori'=>$request->kategori,
         //     'materi'=>$request->materi,
         //     'materi_image'=>$materi->getClie
@@ -69,6 +66,16 @@ class materiController extends Controller
         // $materi->materi_image->$name;
         $materi->save();
         return redirect(route('materi.index'));
+
+        //codingan di menit 27:37 video ke 2
+        // $so=new Materi();
+        // $so->title=$request->input('title'); //sumpah sorry aku gtw iki betul ta ga
+        // $so->kategori_code=$request->input('title'); //iki pisan
+
+        // if($so->save()){
+        //     $materi=Materi::all();
+        //     return view('home');
+        // }
     }
 
     /**

@@ -18,7 +18,18 @@ class CreateMaterisTable extends Migration
             $table->string('kategori');
             $table->text('materi');
             $table->timestamps();
+
+            /**
+             * Kalau sesuai video
+             * //Codingan ini ada di menit 1:07 video ke-2
+             * $table->id();
+             * $table->string('kategori_code');
+             * $table->string('title');
+             * $table->timestamps();
+             */
+
         });
+        
     }
 
     /**
